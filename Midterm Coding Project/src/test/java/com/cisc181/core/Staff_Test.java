@@ -48,7 +48,15 @@ public class Staff_Test {
 		assertEquals(1,1);
 	}	
 	@Test (expected = PersonException.class)
-	public void testInvalidStaff() throws Exception {
-		
+	public void testDOB() throws Exception {
+		Calendar testCalendar = Calendar.getInstance();
+		testCalendar.add(Calendar.YEAR, 101);
+		Staff testStaff = new Staff(eTitle.MR);
+		testStaff.setDOB(testCalendar.getTime());
+	}
+	@Test(expected = PersonException.class)
+	public void TestPhone() throws PersonException {
+		Staff testPhone = new Staff(eTitle.MS);
+		testPhone.setPhone("(999)999-9999");
 	}
 }
